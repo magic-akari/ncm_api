@@ -1,5 +1,3 @@
-import { Album } from "./album.type.ts";
-
 export interface LocalMusicFile {
   path: string;
   filename: string;
@@ -18,5 +16,4 @@ export interface MatchedFile extends LocalMusicFile {
   coverid: string;
   ncmName: string;
   ncmAlbum: string;
-  _ncmAlbum?: Album;
 }
