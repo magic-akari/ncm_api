@@ -7,7 +7,7 @@ import { PlaylistAPI } from "./playlist.type.ts";
 
 export const playlistDetail = async (
   pid: string,
-  cookie?: Cookie
+  cookie?: Cookie,
 ): Promise<PlaylistAPI> => {
   const params = await encodeParams("/api/v6/playlist/detail", {
     e_r: true,
@@ -30,7 +30,7 @@ export const playlistDetail = async (
         Cookie: cookie?.current!,
       },
       body: search,
-    }
+    },
   );
 
   refreshCookieFromResponse(response, cookie);
