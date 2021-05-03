@@ -2,12 +2,14 @@ import {
   decodeBody,
   encodeParams,
 } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
-import { CommentInfoAPI } from "./comment_info.type.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { CommentInfoAPI } from "./comment_info.type.ts";
+import type { ID } from "./id.ts";
 
 export const commentInfoList = async (
-  ids: (string | number)[],
-  resourceType: number | string,
+  ids: ID[],
+  resourceType: ID,
   cookie?: Cookie,
 ): Promise<CommentInfoAPI> => {
   const params = await encodeParams("/api/resource/commentInfo/list", {

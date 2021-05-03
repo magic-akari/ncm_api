@@ -1,5 +1,6 @@
 import { weapi } from "https://deno.land/x/ncm_crypto@v0.0.2/weapi.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
 
 interface SearchParam {
   keyword: string;

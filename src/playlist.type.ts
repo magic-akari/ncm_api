@@ -11,7 +11,7 @@ export interface Playlist {
   name: string;
   coverImgId: number;
   coverImgUrl: string;
-  coverImgId_str: string;
+  "coverImgId_str": string;
   adType: number;
   userId: number;
   createTime: number;

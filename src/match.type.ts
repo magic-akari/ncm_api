@@ -1,4 +1,4 @@
-import { Song } from "./album.type.ts";
+import type { Song } from "./album.type.ts";
 
 export interface MatchAPI {
   result: {

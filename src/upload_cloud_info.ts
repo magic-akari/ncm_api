@@ -1,8 +1,9 @@
 import { encodeParams } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
 import { UploadCheckResult } from "./cloud_upload_check.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
-import { MatchedFile } from "./file.type.ts";
-import { TokenAllocResult } from "./token_alloc.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { MatchedFile } from "./file.type.ts";
+import type { TokenAllocResult } from "./nos_token_alloc.ts";
 
 export interface uploadCloudInfoParam {
   file: MatchedFile;

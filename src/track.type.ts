@@ -47,7 +47,7 @@ export interface Track {
   rtUrls: unknown[];
   djId: number;
   copyright: number;
-  s_id: number;
+  "s_id": number;
   mark: number;
   originCoverType: number;
   originSongSimpleData: unknown;

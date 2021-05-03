@@ -2,14 +2,16 @@ import {
   decodeBody,
   encodeParams,
 } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { ID } from "./id.ts";
 
 export const cloudPub = async (
-  songid: string,
+  songid: ID,
   cookie: Cookie,
 ): Promise<unknown> => {
   const params = await encodeParams("/api/cloud/pub/v2", {
-    songid,
+    songid: songid.toString(),
     e_r: true,
   });
 

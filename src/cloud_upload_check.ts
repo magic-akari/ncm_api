@@ -1,6 +1,7 @@
 import { encodeParams } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
-import { LocalMusicFile } from "./file.type.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { LocalMusicFile } from "./file.type.ts";
 
 export interface UploadCheckResult {
   songId: string;

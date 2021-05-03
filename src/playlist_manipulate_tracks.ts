@@ -2,9 +2,9 @@ import {
   decodeBody,
   encodeParams,
 } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
-
-type ID = number | string;
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { ID } from "./id.ts";
 
 export const playlistManipulateTracks = async (
   pid: ID,

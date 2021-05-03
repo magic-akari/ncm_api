@@ -2,11 +2,13 @@ import {
   decodeBody,
   encodeParams,
 } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
-import { SongDetailAPI } from "./song.type.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { ID } from "./id.ts";
+import type { SongDetailAPI } from "./song.type.ts";
 
 export const SongDetail = async (
-  ids: (number | string)[],
+  ids: ID[],
   cookie?: Cookie,
 ): Promise<SongDetailAPI> => {
   const params = await encodeParams("/api/v3/song/detail", {

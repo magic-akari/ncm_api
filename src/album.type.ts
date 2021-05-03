@@ -7,7 +7,7 @@ export interface Album {
   name: string;
   size: number;
   picUrl: string;
-  picId_str: string;
+  "picId_str": string;
 }
 
 export interface SimpleSong {

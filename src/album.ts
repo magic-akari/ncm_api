@@ -1,10 +1,9 @@
-import { AlbumAPI } from "./album.type.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
+import type { AlbumAPI } from "./album.type.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+import type { ID } from "./id.ts";
 
-export const album = async (
-  aid: string | number,
-  cookie?: Cookie,
-): Promise<AlbumAPI> => {
+export const album = async (aid: ID, cookie?: Cookie): Promise<AlbumAPI> => {
   const response = await fetch(`https://music.163.com/api/v1/album/${aid}`, {
     method: "GET",
     headers: {
