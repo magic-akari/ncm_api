@@ -25,7 +25,7 @@ export interface Track {
   id: number;
   pst: number;
   t: number;
-  ar: AR;
+  ar: AR[];
   alia: string[];
   pop: number;
   st: number;
