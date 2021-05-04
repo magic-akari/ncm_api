@@ -2,7 +2,7 @@ import type { Privilege } from "./privilege.type.ts";
 import type { Track, TrackId } from "./track.type.ts";
 
 export interface PlaylistAPI {
-  playlist: Playlist[];
+  playlist: Playlist;
   privileges: Privilege[];
 }
 
