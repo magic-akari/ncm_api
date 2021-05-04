@@ -8,7 +8,7 @@ export interface MatchParam extends Record<string, number> {
   userId: number;
 }
 
-export const userSongMatch = async (matchParam: MatchParam, cookie: Cookie) => {
+export const cloudUserSongMatch = async (matchParam: MatchParam, cookie: Cookie) => {
   const params = await weapi(matchParam);
 
   const search = new URLSearchParams(params);

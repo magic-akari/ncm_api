@@ -8,7 +8,7 @@ export interface UploadCheckResult {
   needUpload: boolean;
 }
 
-export const uploadCheck = async (
+export const cloudUploadCheck = async (
   file: LocalMusicFile,
   cookie: Cookie,
 ): Promise<UploadCheckResult> => {
