@@ -7,7 +7,7 @@ import { refreshCookieFromResponse } from "./cookie.ts";
 import type { ID } from "./id.ts";
 import type { SongDetailAPI } from "./song.type.ts";
 
-export const SongDetail = async (
+export const songDetail = async (
   ids: ID[],
   cookie?: Cookie,
 ): Promise<SongDetailAPI> => {
@@ -40,5 +40,5 @@ export const SongDetail = async (
 };
 
 if (import.meta.main) {
-  SongDetail(["536570516", 536623510]).then(console.log);
+  songDetail(["536570516", 536623510]).then(console.log);
 }
