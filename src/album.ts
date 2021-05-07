@@ -4,7 +4,7 @@ import { refreshCookieFromResponse } from "./cookie.ts";
 import type { ID } from "./id.ts";
 
 export const album = async (aid: ID, cookie?: Cookie): Promise<AlbumAPI> => {
-  const response = await fetch(`https://music.163.com/api/v1/album/${aid}`, {
+  const response = await fetch(`http://music.163.com/api/v1/album/${aid}`, {
     method: "GET",
     headers: {
       Host: "music.163.com",

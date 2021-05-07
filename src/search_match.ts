@@ -21,7 +21,7 @@ export const searchMatch = async (
   const search = new URLSearchParams({
     params,
   });
-  return fetch("https://music.163.com/eapi/search/match/new", {
+  return fetch("http://music.163.com/eapi/search/match/new", {
     method: "POST",
     headers: {
       Host: "music.163.com",

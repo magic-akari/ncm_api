@@ -14,7 +14,7 @@ export const cloudUserSongMatch = async (matchParam: MatchParam, cookie: Cookie)
   const search = new URLSearchParams(params);
 
   const response = await fetch(
-    "https://music.163.com/weapi/cloud/user/song/match",
+    "http://music.163.com/weapi/cloud/user/song/match",
     {
       method: "POST",
       headers: {

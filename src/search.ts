@@ -37,7 +37,7 @@ export const search = async <T>(
 
   const search = new URLSearchParams(params);
 
-  const response = await fetch("https://music.163.com/weapi/search/get", {
+  const response = await fetch("http://music.163.com/weapi/search/get", {
     method: "POST",
     headers: {
       Host: "music.163.com",

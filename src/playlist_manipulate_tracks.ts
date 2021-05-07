@@ -24,7 +24,7 @@ export const playlistManipulateTracks = async (
   });
 
   const response = await fetch(
-    "https://music.163.com/eapi/playlist/manipulate/tracks",
+    "http://music.163.com/eapi/playlist/manipulate/tracks",
     {
       method: "POST",
       headers: {

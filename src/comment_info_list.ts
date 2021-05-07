@@ -23,7 +23,7 @@ export const commentInfoList = async (
   });
 
   const response = await fetch(
-    "https://music.163.com/eapi/resource/commentInfo/list",
+    "http://music.163.com/eapi/resource/commentInfo/list",
     {
       method: "POST",
       headers: {

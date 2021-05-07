@@ -22,7 +22,7 @@ export const playlistDetail = async (
   });
 
   const response = await fetch(
-    "https://music.163.com/eapi/v6/playlist/detail",
+    "http://music.163.com/eapi/v6/playlist/detail",
     {
       method: "POST",
       headers: {

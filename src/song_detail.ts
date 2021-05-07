@@ -20,7 +20,7 @@ export const songDetail = async (
     params,
   });
 
-  const response = await fetch("https://music.163.com/eapi/v3/song/detail", {
+  const response = await fetch("http://music.163.com/eapi/v3/song/detail", {
     method: "POST",
     headers: {
       Host: "music.163.com",
