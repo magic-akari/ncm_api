@@ -1,11 +1,11 @@
 import { readAll } from "https://deno.land/std@0.95.0/io/util.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 import { uploadIP } from "./lbs.ts";
-import type { TokenAllocResult } from "./nos_token_alloc.ts";
+import type { TokenAllocAudioResult } from "./nos_token_alloc.ts";
 
 export const ymusic = async (
   file: LocalMusicFile,
-  tokenResult: TokenAllocResult,
+  tokenResult: TokenAllocAudioResult,
 ) => {
   const [ip, body] = await Promise.all([
     uploadIP(),

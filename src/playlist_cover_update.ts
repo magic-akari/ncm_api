@@ -1,6 +1,6 @@
-import type { ID } from "./id.ts";
 import { weapi } from "https://deno.land/x/ncm_crypto@v0.0.2/weapi.ts";
 import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
+import type { ID } from "./id.ts";
 
 export interface PlaylistCoverUpdateParams extends Record<string, unknown> {
   id: ID;
