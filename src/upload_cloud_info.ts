@@ -3,12 +3,12 @@ import { UploadCheckResult } from "./cloud_upload_check.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 import type { MatchedFile } from "./file.type.ts";
-import type { TokenAllocResult } from "./nos_token_alloc.ts";
+import type { TokenAllocAudioResult } from "./nos_token_alloc.ts";
 
 export interface uploadCloudInfoParam {
   file: MatchedFile;
   checkResult: UploadCheckResult;
-  tokenResult: TokenAllocResult;
+  tokenResult: TokenAllocAudioResult;
 }
 
 export interface UploadCloudInfo {

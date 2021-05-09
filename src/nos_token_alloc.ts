@@ -6,26 +6,28 @@ import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 
-export interface TokenAllocResult {
+export interface TokenAllocAudioResult {
   bucket: string;
   token: string;
   objectKey: string;
   resourceId: number;
 }
 
+export interface TokenAllocImageResult {
+  bucket: string;
+  docId: string;
+  token: string;
+  objectKey: string;
+}
+
+export type TokenAllocResult = TokenAllocAudioResult | TokenAllocImageResult;
+
 export const nosTokenAlloc = async (
-  file: LocalMusicFile,
+  data: Record<string, unknown>,
   cookie: Cookie,
 ): Promise<TokenAllocResult> => {
   const params = await encodeParams("/api/nos/token/alloc", {
-    bucket: "",
-    ext: file.filename.split(".").pop(),
-    filename: file.filename,
-    fileSize: file.size,
-    nos_product: 3,
-    type: "audio",
-    local: false,
-    md5: file.md5,
+    ...data,
     e_r: true,
   });
 
@@ -54,4 +56,39 @@ export const nosTokenAlloc = async (
     .then(decodeBody)
     .then(JSON.parse)
     .then(({ result }) => result as TokenAllocResult);
+};
+
+export const nosTokenAllocAudio = (
+  file: LocalMusicFile,
+  cookie: Cookie,
+): Promise<TokenAllocAudioResult> => {
+  const data = {
+    bucket: "",
+    ext: file.filename.split(".").pop(),
+    filename: file.filename,
+    fileSize: file.size,
+    "nos_product": 3,
+    type: "audio",
+    local: false,
+    md5: file.md5,
+  };
+
+  return nosTokenAlloc(data, cookie) as Promise<TokenAllocAudioResult>;
+};
+
+export const nosTokenAllocImage = (
+  filename: string,
+  cookie: Cookie,
+): Promise<TokenAllocImageResult> => {
+  const data = {
+    bucket: "yyimgs",
+    ext: filename.split(".").pop(),
+    filename,
+    local: false,
+    "nos_product": 0,
+    "return_body": `{"code":200,"size":"$(ObjectSize)"}`,
+    type: "other",
+  };
+
+  return nosTokenAlloc(data, cookie) as Promise<TokenAllocImageResult>;
 };
