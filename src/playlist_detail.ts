@@ -4,15 +4,16 @@ import {
 } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
+import { ID } from "./id.ts";
 import type { PlaylistAPI } from "./playlist.type.ts";
 
 export const playlistDetail = async (
-  pid: string,
+  pid: ID,
   cookie?: Cookie,
 ): Promise<PlaylistAPI> => {
   const params = await encodeParams("/api/v6/playlist/detail", {
     e_r: true,
-    id: pid,
+    id: pid.toString(),
     n: "100000",
     s: "0",
   });
