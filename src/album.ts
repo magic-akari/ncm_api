@@ -21,5 +21,5 @@ export const album = async (aid: ID, cookie?: Cookie): Promise<AlbumAPI> => {
 };
 
 if (import.meta.main) {
-  album("35919025").then(console.log);
+  album("35919025").then((r) => console.log(JSON.stringify(r, null, 2)));
 }
