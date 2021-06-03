@@ -3,6 +3,8 @@ import type { AlbumSublistAPI } from "./album_sublist.type.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 
+export * from "./album_sublist.type.ts";
+
 export interface albumSublistParam extends Record<string, number> {
   limit: number;
   offset: number;
@@ -11,7 +13,7 @@ export interface albumSublistParam extends Record<string, number> {
 export const albumSublist = async (
   cookie: Cookie,
   limit = 1000,
-  offset = 0
+  offset = 0,
 ): Promise<AlbumSublistAPI> => {
   const params = await weapi({
     limit,
