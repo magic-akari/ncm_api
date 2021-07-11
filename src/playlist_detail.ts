@@ -45,5 +45,11 @@ export const playlistDetail = async (
 };
 
 if (import.meta.main) {
-  playlistDetail("745510353").then(console.log);
+  const cookie = {
+    current: Deno.env.get("cookie"),
+  };
+
+  playlistDetail(Deno.args[0], cookie).then((result) => {
+    console.log(JSON.stringify(result, null, 4));
+  });
 }
