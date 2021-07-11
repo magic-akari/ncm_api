@@ -1,4 +1,4 @@
-import { encodeParams } from "https://deno.land/x/ncm_crypto@v0.0.2/eapi.ts";
+import { encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 import type { MatchAPI } from "./match.type.ts";
 

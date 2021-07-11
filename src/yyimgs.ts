@@ -1,4 +1,4 @@
-import { readAll } from "https://deno.land/std@0.95.0/io/util.ts";
+import { readAll } from "../dependencies/std/io/util.ts";
 import type { TokenAllocImageResult } from "./nos_token_alloc.ts";
 
 export const yyimgs = async (

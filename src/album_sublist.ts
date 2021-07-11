@@ -1,4 +1,4 @@
-import { weapi } from "https://deno.land/x/ncm_crypto@v0.0.2/weapi.ts";
+import { weapi } from "../dependencies/ncm_crypto/weapi.ts";
 import type { AlbumSublistAPI } from "./album_sublist.type.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
