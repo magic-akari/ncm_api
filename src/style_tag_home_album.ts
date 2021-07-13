@@ -12,7 +12,7 @@ export interface StyleTagHomeAlbumParams {
 export const styleTagHomeAlbum = async (
   tagId: number,
   options?: StyleTagHomeAlbumParams,
-  cookie?: Cookie
+  cookie?: Cookie,
 ): Promise<StyleTagHomeAlbum> => {
   const params = await encodeParams("/api/style-tag/home/album", {
     tagId,
@@ -35,7 +35,7 @@ export const styleTagHomeAlbum = async (
         Cookie: cookie?.current!,
       },
       body: search,
-    }
+    },
   );
 
   refreshCookieFromResponse(response, cookie);

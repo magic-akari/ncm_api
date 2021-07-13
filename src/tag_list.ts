@@ -21,7 +21,7 @@ export const tagList = async (cookie?: Cookie): Promise<TagList> => {
         Cookie: cookie?.current!,
       },
       body: search,
-    }
+    },
   );
 
   refreshCookieFromResponse(response, cookie);
