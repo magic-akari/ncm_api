@@ -1,7 +1,10 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 import { TagList } from "./tag_list.type.ts";
+
+export * from "./tag_list.type.ts";
 
 export const tagList = async (cookie?: Cookie): Promise<TagList> => {
   const params = await encodeParams("/api/tag/list/get", {
@@ -16,8 +19,7 @@ export const tagList = async (cookie?: Cookie): Promise<TagList> => {
     {
       method: "POST",
       headers: {
-        Host: "music.163.com",
-        "Content-Type": "application/x-www-form-urlencoded",
+        ...iosHeaders,
         Cookie: cookie?.current!,
       },
       body: search,

@@ -1,4 +1,5 @@
 import { weapi } from "../dependencies/ncm_crypto/weapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 
@@ -21,8 +22,7 @@ export const cloudUserSongMatch = async (
     {
       method: "POST",
       headers: {
-        Host: "music.163.com",
-        "Content-Type": "application/x-www-form-urlencoded",
+        ...iosHeaders,
         Cookie: cookie.current!,
       },
       body: search,

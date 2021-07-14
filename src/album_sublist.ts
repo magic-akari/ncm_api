@@ -1,5 +1,6 @@
 import { weapi } from "../dependencies/ncm_crypto/weapi.ts";
 import type { AlbumSublistAPI } from "./album_sublist.type.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 
@@ -25,8 +26,7 @@ export const albumSublist = async (
   const response = await fetch("http://music.163.com/weapi/album/sublist", {
     method: "POST",
     headers: {
-      Host: "music.163.com",
-      "Content-Type": "application/x-www-form-urlencoded",
+      ...iosHeaders,
       Cookie: cookie.current!,
     },
     body: search,

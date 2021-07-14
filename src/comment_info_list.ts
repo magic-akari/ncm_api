@@ -1,4 +1,5 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { CommentInfoAPI } from "./comment_info.type.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
@@ -26,8 +27,7 @@ export const commentInfoList = async (
     {
       method: "POST",
       headers: {
-        Host: "music.163.com",
-        "Content-Type": "application/x-www-form-urlencoded",
+        ...iosHeaders,
         Cookie: cookie?.current!,
       },
       body: search,

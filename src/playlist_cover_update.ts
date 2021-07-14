@@ -1,4 +1,5 @@
 import { weapi } from "../dependencies/ncm_crypto/weapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
 import type { ID } from "./id.ts";
 
@@ -20,8 +21,7 @@ export const playlistCoverUpdate = async (
     {
       method: "POST",
       headers: {
-        Host: "music.163.com",
-        "Content-Type": "application/x-www-form-urlencoded",
+        ...iosHeaders,
         Cookie: cookie.current!,
       },
       body: search,

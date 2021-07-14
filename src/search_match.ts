@@ -1,4 +1,5 @@
 import { encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 import type { MatchAPI } from "./match.type.ts";
 
@@ -23,12 +24,7 @@ export const searchMatch = async (
   });
   return fetch("http://music.163.com/eapi/search/match/new", {
     method: "POST",
-    headers: {
-      Host: "music.163.com",
-      "User-Agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) NeteaseMusicDesktop/2.3.4.848",
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
+    headers: iosHeaders,
     body: search,
   }).then((a) => a.json());
 };

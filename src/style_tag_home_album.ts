@@ -1,7 +1,10 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 import type { StyleTagHomeAlbum } from "./style_tag_home_album.type.ts";
+
+export * from "./style_tag_home_album.type.ts";
 
 export interface StyleTagHomeAlbumParams {
   cursor?: number;
@@ -30,8 +33,7 @@ export const styleTagHomeAlbum = async (
     {
       method: "POST",
       headers: {
-        Host: "music.163.com",
-        "Content-Type": "application/x-www-form-urlencoded",
+        ...iosHeaders,
         Cookie: cookie?.current!,
       },
       body: search,

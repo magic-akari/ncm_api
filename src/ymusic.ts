@@ -1,4 +1,5 @@
 import { readAll } from "../dependencies/std/io/util.ts";
+import { pcHeaders } from "./api_headers.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 import { uploadIP } from "./lbs.ts";
 import type { TokenAllocAudioResult } from "./nos_token_alloc.ts";
@@ -21,6 +22,8 @@ export const ymusic = async (
     {
       method: "POST",
       headers: {
+        ...pcHeaders,
+        "User-Agent": "neteasemusic/8.2.50 (iPhone; iOS 14.6; Scale/2.00)",
         "x-nos-token": tokenResult.token,
         "Content-MD5": file.md5,
         "Content-Type": "audio/mpeg",

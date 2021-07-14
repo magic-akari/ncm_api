@@ -1,4 +1,5 @@
 import { encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { pcHeaders } from "./api_headers.ts";
 import { UploadCheckResult } from "./cloud_upload_check.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
@@ -46,8 +47,7 @@ export const uploadCloudInfo = async (
     {
       method: "POST",
       headers: {
-        Host: "music.163.com",
-        "Content-Type": "application/x-www-form-urlencoded",
+        ...pcHeaders,
         Cookie: cookie.current!,
       },
       body: search,

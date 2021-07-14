@@ -1,4 +1,5 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { iosHeaders } from "./api_headers.ts";
 import type { Cookie } from "./cookie.ts";
 import { refreshCookieFromResponse } from "./cookie.ts";
 import type { ID } from "./id.ts";
@@ -25,8 +26,7 @@ export const albumUnsub = async (
   const response = await fetch("http://music.163.com/eapi/album/unsub", {
     method: "POST",
     headers: {
-      Host: "music.163.com",
-      "Content-Type": "application/x-www-form-urlencoded",
+      ...iosHeaders,
       Cookie: cookie?.current!,
     },
     body: search,
