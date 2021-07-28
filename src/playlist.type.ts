@@ -1,5 +1,6 @@
 import type { Privilege } from "./privilege.type.ts";
 import type { Track, TrackId } from "./track.type.ts";
+import type { User } from "./user.type.ts";
 
 export interface PlaylistAPI {
   playlist: Playlist;
@@ -11,7 +12,7 @@ export interface Playlist {
   name: string;
   coverImgId: number;
   coverImgUrl: string;
-  "coverImgId_str": string;
+  coverImgId_str: string;
   adType: number;
   userId: number;
   createTime: number;
@@ -40,7 +41,7 @@ export interface Playlist {
   englishTitle: unknown;
   subscribers: unknown[];
   subscribed: boolean;
-  creator: unknown;
+  creator: User;
   tracks: Track[];
   videoIds: unknown;
   videos: unknown;
