@@ -7,12 +7,13 @@ import type { SongeEnhancePlayerUrl } from "./song_enhance_player_url.type.ts";
 
 export const songeEnhancePlayerUrl = async (
   ids: ID[],
+  br = 999000,
   cookie?: Cookie,
 ): Promise<SongeEnhancePlayerUrl> => {
   const params = await encodeParams("/api/song/enhance/player/url", {
     e_r: true,
     ids: JSON.stringify(ids),
-    br: 999000,
+    br,
   });
   const search = new URLSearchParams({
     params,
@@ -43,7 +44,7 @@ if (import.meta.main) {
     current: Deno.env.get("cookie"),
   };
 
-  songeEnhancePlayerUrl([1434241297, 1434244170], cookie).then((r) =>
+  songeEnhancePlayerUrl([1434241297, 1434244170], 999000, cookie).then((r) =>
     console.log(JSON.stringify(r, null, 2))
   );
 }
