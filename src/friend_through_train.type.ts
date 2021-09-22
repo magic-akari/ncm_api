@@ -1,8 +1,12 @@
 export interface FriendThroughTrainAPI {
-  modelList: Model[];
-  versionCode: string;
-  logInfo: unknown;
-  title: unknown;
+  code: number;
+  message: string;
+  data: {
+    modelList: Model[];
+    versionCode: string;
+    logInfo: unknown;
+    title: unknown;
+  };
 }
 
 export interface Model {
