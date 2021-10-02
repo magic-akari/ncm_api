@@ -66,5 +66,7 @@ export interface TrackId {
   v: number;
   t: number;
   at: number;
+  alg: unknown;
+  uid: number;
   rcmdReason: string;
 }

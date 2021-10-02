@@ -7,6 +7,7 @@ export interface Album {
   name: string;
   size: number;
   picUrl: string;
+  "picId_str": string;
   alias: string[];
   artists: Artist[];
 }

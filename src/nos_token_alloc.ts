@@ -7,6 +7,8 @@ import type { LocalMusicFile } from "./file.type.ts";
 export interface TokenAllocAudioResult {
   bucket: string;
   token: string;
+  outerUrl?: string;
+  docId?: string;
   objectKey: string;
   resourceId: number;
 }
@@ -64,7 +66,7 @@ export const nosTokenAllocAudio = (
     ext: file.filename.split(".").pop(),
     filename: file.filename,
     fileSize: file.size,
-    "nos_product": 3,
+    nos_product: 3,
     type: "audio",
     local: false,
     md5: file.md5,
@@ -82,8 +84,8 @@ export const nosTokenAllocImage = (
     ext: filename.split(".").pop(),
     filename,
     local: false,
-    "nos_product": 0,
-    "return_body": `{"code":200,"size":"$(ObjectSize)"}`,
+    nos_product: 0,
+    return_body: `{"code":200,"size":"$(ObjectSize)"}`,
     type: "other",
   };
 
