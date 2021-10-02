@@ -14,12 +14,11 @@ export const ymusic = async (
   ]);
 
   return fetch(
-    tokenResult.outerUrl ||
-      `${ip}/ymusic/${
-        encodeURIComponent(
-          tokenResult.objectKey,
-        )
-      }?offset=0&complete=true&version=1.0`,
+    `${ip}/${tokenResult.bucket || "ymusic"}/${
+      encodeURIComponent(
+        tokenResult.objectKey,
+      )
+    }?offset=0&complete=true&version=1.0`,
     {
       method: "POST",
       headers: {
