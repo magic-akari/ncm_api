@@ -1,0 +1,63 @@
+import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { iosHeaders } from "./api_headers.ts";
+import type { Cookie } from "./cookie.ts";
+import { refreshCookieFromResponse } from "./cookie.ts";
+
+export interface shareFriendsResourceProps extends Record<string, unknown> {
+  id: string;
+  type: "song" | "playlist" | "mv" | "djprogram" | "djradio" | "noresource";
+  msg: string;
+  pics?: string;
+  videoinfo?: string;
+  circleId?: string;
+  privacySetting?: number;
+}
+
+export const shareFriendsResource = async (
+  content: shareFriendsResourceProps,
+  cookie?: Cookie,
+): Promise<unknown> => {
+  const params = await encodeParams("/api/share/friends/resource", {
+    ...content,
+    e_r: true,
+  });
+
+  const search = new URLSearchParams({
+    params,
+  });
+  const response = await fetch(
+    "http://interface3.music.163.com/eapi/share/friends/resource",
+    {
+      method: "POST",
+      headers: {
+        ...iosHeaders,
+        Cookie: cookie?.current!,
+      },
+      body: search,
+    },
+  );
+
+  refreshCookieFromResponse(response, cookie);
+
+  return response
+    .arrayBuffer()
+    .then((ab) => new Uint8Array(ab))
+    .then(decodeBody)
+    .then(JSON.parse);
+};
+
+if (import.meta.main) {
+  const cookie = {
+    current: Deno.env.get("cookie"),
+  };
+
+  shareFriendsResource(
+    {
+      id: "28411784",
+      type: "song",
+      msg: "世界，晚安",
+      privacySetting: 2,
+    },
+    cookie,
+  ).then((r) => console.log(JSON.stringify(r, null, 2)));
+}
