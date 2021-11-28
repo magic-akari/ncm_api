@@ -1,4 +1,4 @@
-import { readAll } from "../dependencies/std/io/util.ts";
+import { readAll } from "../dependencies/std/streams/mod.ts";
 import { iosHeaders } from "./_api_headers.ts";
 import type { TokenAllocImageResult } from "./nos_token_alloc.ts";
 
