@@ -1,5 +1,5 @@
 import { readAll } from "../dependencies/std/io/util.ts";
-import { pcHeaders } from "./api_headers.ts";
+import { pcHeaders } from "./_api_headers.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 import { uploadIP } from "./lbs.ts";
 import type { TokenAllocAudioResult } from "./nos_token_alloc.ts";

@@ -1,6 +1,6 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
-import { iosHeaders } from "./api_headers.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
+import { iosHeaders } from "./_api_headers.ts";
+import { Cookie, refreshCookieFromResponse } from "./_cookie.ts";
 import type { ID } from "./id.ts";
 import type { PlaylistSubscribers } from "./playlist_subscribers.type.ts";
 

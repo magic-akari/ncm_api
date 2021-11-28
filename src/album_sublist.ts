@@ -1,8 +1,8 @@
 import { weapi } from "../dependencies/ncm_crypto/weapi.ts";
 import type { AlbumSublistAPI } from "./album_sublist.type.ts";
-import { iosHeaders } from "./api_headers.ts";
-import type { Cookie } from "./cookie.ts";
-import { refreshCookieFromResponse } from "./cookie.ts";
+import { iosHeaders } from "./_api_headers.ts";
+import type { Cookie } from "./_cookie.ts";
+import { refreshCookieFromResponse } from "./_cookie.ts";
 
 export * from "./album_sublist.type.ts";
 

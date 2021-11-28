@@ -1,6 +1,6 @@
 import { weapi } from "../dependencies/ncm_crypto/weapi.ts";
-import { iosHeaders } from "./api_headers.ts";
-import { Cookie, refreshCookieFromResponse } from "./cookie.ts";
+import { iosHeaders } from "./_api_headers.ts";
+import { Cookie, refreshCookieFromResponse } from "./_cookie.ts";
 import type { ID } from "./id.ts";
 
 export interface PlaylistCoverUpdateParams extends Record<string, unknown> {

@@ -1,7 +1,7 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
-import { iosHeaders } from "./api_headers.ts";
-import type { Cookie } from "./cookie.ts";
-import { refreshCookieFromResponse } from "./cookie.ts";
+import { iosHeaders } from "./_api_headers.ts";
+import type { Cookie } from "./_cookie.ts";
+import { refreshCookieFromResponse } from "./_cookie.ts";
 import { TagList } from "./tag_list.type.ts";
 
 export * from "./tag_list.type.ts";

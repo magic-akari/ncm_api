@@ -1,8 +1,8 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
-import { iosHeaders } from "./api_headers.ts";
+import { iosHeaders } from "./_api_headers.ts";
 import type { CommentInfoAPI } from "./comment_info.type.ts";
-import type { Cookie } from "./cookie.ts";
-import { refreshCookieFromResponse } from "./cookie.ts";
+import type { Cookie } from "./_cookie.ts";
+import { refreshCookieFromResponse } from "./_cookie.ts";
 import type { ID } from "./id.ts";
 
 export * from "./comment_info.type.ts";

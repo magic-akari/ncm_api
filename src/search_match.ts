@@ -1,5 +1,5 @@
 import { encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
-import { iosHeaders } from "./api_headers.ts";
+import { iosHeaders } from "./_api_headers.ts";
 import type { LocalMusicFile } from "./file.type.ts";
 import type { MatchAPI } from "./match.type.ts";
 

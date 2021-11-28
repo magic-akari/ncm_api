@@ -1,5 +1,5 @@
 import { readAll } from "../dependencies/std/io/util.ts";
-import { iosHeaders } from "./api_headers.ts";
+import { iosHeaders } from "./_api_headers.ts";
 import type { TokenAllocImageResult } from "./nos_token_alloc.ts";
 
 export const yyimgs = async (

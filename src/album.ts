@@ -1,7 +1,7 @@
 import type { AlbumAPI } from "./album.type.ts";
-import { iosHeaders } from "./api_headers.ts";
-import type { Cookie } from "./cookie.ts";
-import { refreshCookieFromResponse } from "./cookie.ts";
+import { iosHeaders } from "./_api_headers.ts";
+import type { Cookie } from "./_cookie.ts";
+import { refreshCookieFromResponse } from "./_cookie.ts";
 import type { ID } from "./id.ts";
 
 export * from "./album.type.ts";
