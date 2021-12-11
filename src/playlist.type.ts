@@ -2,9 +2,18 @@ import type { Privilege } from "./privilege.type.ts";
 import type { Track, TrackId } from "./track.type.ts";
 import type { User } from "./user.type.ts";
 
+export interface ResEntrance {
+  resId: string;
+  resName: string;
+  tag: string;
+  orpheusUrl: string;
+}
+
 export interface PlaylistAPI {
+  code: number;
   playlist: Playlist;
   privileges: Privilege[];
+  resEntrance: ResEntrance | null;
 }
 
 export interface Playlist {
