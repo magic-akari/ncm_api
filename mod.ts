@@ -39,6 +39,7 @@ export * from "./src/tag_list.type.ts";
 export * from "./src/track.type.ts";
 export * from "./src/upload_cloud_info.ts";
 export * from "./src/user.type.ts";
+export * from "./src/user_avatar_upload.ts";
 export * from "./src/user_playlist.ts";
 export * from "./src/ymusic.ts";
 export * from "./src/yyimgs.ts";
