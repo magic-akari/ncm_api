@@ -1,7 +1,7 @@
-import { Album } from "./album.type.ts";
+import { SimpleAlbum } from "./album.type.ts";
 
 export interface AlbumSublistAPI {
-  data: Album[];
+  data: SimpleAlbum[];
   count: number;
   hasMore: boolean;
   cover: string;
