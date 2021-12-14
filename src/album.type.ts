@@ -1,5 +1,8 @@
 export interface Artist {
+  id: number;
   name: string;
+  picUrl: string;
+  "img1v1Id_str": string;
 }
 
 export interface SimpleAlbum {
@@ -56,7 +59,7 @@ export interface Album {
   subType: string;
   name: string;
   id: number;
-  type: number;
+  type: string;
   size: number;
   "picId_str": string;
   info: {
