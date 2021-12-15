@@ -2,14 +2,14 @@ interface AL {
   id: number;
   name: string;
   picUrl: string;
-  tns: unknown[];
+  tns: string[];
   pic: number;
 }
 
 interface AR {
   id: number;
   name: string;
-  tns: unknown[];
+  tns: string[];
   alias: unknown[];
 }
 
@@ -47,7 +47,7 @@ export interface Track {
   rtUrls: unknown[];
   djId: number;
   copyright: number;
-  "s_id": number;
+  s_id: number;
   mark: number;
   originCoverType: number;
   originSongSimpleData: unknown;
@@ -59,6 +59,7 @@ export interface Track {
   rtype: number;
   rurl: unknown;
   publishTime: number;
+  tns: string[];
 }
 
 export interface TrackId {
