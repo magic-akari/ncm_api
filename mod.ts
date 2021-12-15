@@ -23,6 +23,7 @@ export * from "./src/nos_token_alloc.ts";
 export * from "./src/page.ts";
 export * from "./src/playlist.type.ts";
 export * from "./src/playlist_cover_update.ts";
+export * from "./src/playlist_desc_update.ts";
 export * from "./src/playlist_detail.ts";
 export * from "./src/playlist_manipulate_tracks.ts";
 export * from "./src/playlist_subscribers.ts";
