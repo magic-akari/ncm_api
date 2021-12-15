@@ -1,4 +1,4 @@
-import type { SimpleAlbum } from "./album.type.ts";
+import type { Album } from "./album.type.ts";
 
 interface Page {
   cursor: number;
@@ -9,7 +9,7 @@ interface Page {
 
 export interface StyleTagHomeAlbum {
   data: {
-    albums: SimpleAlbum[];
+    albums: Album[];
     page: Page;
   };
   code: number;
