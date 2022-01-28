@@ -11,6 +11,7 @@ export interface shareFriendsResourceProps extends Record<string, unknown> {
   videoinfo?: string;
   circleId?: string;
   privacySetting?: number;
+  targetPublishTime?: number;
 }
 
 export const shareFriendsResource = async (
