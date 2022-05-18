@@ -1,3 +1,4 @@
+#!deno run -A
 const output: string[] = [];
 
 for (const file of Deno.readDirSync("./src")) {

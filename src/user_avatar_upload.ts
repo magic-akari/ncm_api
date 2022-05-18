@@ -26,3 +26,21 @@ export const usetAvatarUpload = async (
 
   return response.json();
 };
+
+if (import.meta.main) {
+  const file = Deno.args[0];
+
+  const cookie = {
+    current: Deno.env.get("cookie"),
+  };
+
+  const allocResult = await import("./nos_token_alloc.ts").then(
+    ({ nosTokenAllocImage }) => nosTokenAllocImage(file, cookie),
+  );
+
+  console.log(allocResult);
+
+  await import("./yyimgs.ts").then(({ yyimgs }) => yyimgs(file, allocResult));
+
+  usetAvatarUpload(allocResult.docId, cookie).then(console.log);
+}

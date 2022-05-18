@@ -1,21 +1,21 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
-import type { CommentInfoAPI } from "./comment_info_list.type.ts";
-import type { ID } from "./id.ts";
+import type { CommentInfoLikeListAPI } from "./comment_info_like_list.type.ts";
 import { iosHeaders } from "./_api_headers.ts";
 import type { Cookie } from "./_cookie.ts";
 import { refreshCookieFromResponse } from "./_cookie.ts";
+export * from "./comment_info_like_list.type.ts";
 
-export * from "./comment_info_list.type.ts";
-
-export const commentInfoList = async (
-  ids: ID[],
-  resourceType: ID,
+export const commentInfoLikeList = async (
+  threadId: string,
+  pagesize = 20,
+  pagenum = 1,
   cookie?: Cookie,
-): Promise<CommentInfoAPI> => {
-  const params = await encodeParams("/api/resource/commentInfo/list", {
+): Promise<CommentInfoLikeListAPI> => {
+  const params = await encodeParams("/api/v1/resource/commentinfo/likelist", {
     e_r: true,
-    resourceType: resourceType.toString(),
-    resourceIds: JSON.stringify(ids.map((id) => Number(id))),
+    threadId,
+    pagesize,
+    pagenum,
   });
 
   const search = new URLSearchParams({
@@ -23,7 +23,7 @@ export const commentInfoList = async (
   });
 
   const response = await fetch(
-    "http://music.163.com/eapi/resource/commentInfo/list",
+    "http://music.163.com/eapi/v1/resource/commentinfo/likelist",
     {
       method: "POST",
       headers: {
@@ -43,13 +43,10 @@ export const commentInfoList = async (
     .then(JSON.parse);
 };
 
-export const SongCommentInfoList = (
-  ids: (string | number)[],
-  cookie?: Cookie,
-) => {
-  return commentInfoList(ids, 4, cookie);
-};
-
 if (import.meta.main) {
-  commentInfoList(["536570516", 536623510], 4).then(console.log);
+  const threadId = Deno.args[0];
+
+  commentInfoLikeList(threadId, 100, 1).then((r) =>
+    console.log(JSON.stringify(r, null, 2))
+  );
 }
