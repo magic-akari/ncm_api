@@ -1,3 +1,11 @@
+export type BrLevel =
+  | "none"
+  | "standard"
+  | "higher"
+  | "exhigh"
+  | "lossless"
+  | "hires";
+
 export interface Privilege {
   id: number;
   fee: number;
@@ -19,6 +27,12 @@ export interface Privilege {
   preSell: boolean;
   playMaxbr: number;
   downloadMaxbr: number;
+  maxBrLevel: BrLevel;
+  playMaxBrLevel: BrLevel;
+  downloadMaxBrLevel: BrLevel;
+  plLevel: BrLevel;
+  dlLevel: BrLevel;
+  flLevel: BrLevel;
   freeTrialPrivilege: { resConsumable: boolean; userConsumable: boolean };
   chargeInfoList: ChargeInfo[];
 }
