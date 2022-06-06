@@ -18,6 +18,8 @@ export * from "./src/comment_info_list.type.ts";
 export * from "./src/file.type.ts";
 export * from "./src/friend_through_train.ts";
 export * from "./src/friend_through_train.type.ts";
+export * from "./src/hepai_recommend.ts";
+export * from "./src/hepai_recommend.type.ts";
 export * from "./src/id.ts";
 export * from "./src/lbs.ts";
 export * from "./src/match.type.ts";
