@@ -15,6 +15,8 @@ export * from "./src/comment_info_like_list.ts";
 export * from "./src/comment_info_like_list.type.ts";
 export * from "./src/comment_info_list.ts";
 export * from "./src/comment_info_list.type.ts";
+export * from "./src/comments.ts";
+export * from "./src/comments.type.ts";
 export * from "./src/file.type.ts";
 export * from "./src/friend_through_train.ts";
 export * from "./src/friend_through_train.type.ts";

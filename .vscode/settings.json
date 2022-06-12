@@ -8,5 +8,6 @@
   "deno.codeLens.referencesAllFunctions": true,
   "deno.enable": true,
   "deno.lint": true,
+  "deno.suggest.autoImports": true,
   "deno.suggest.completeFunctionCalls": true
 }
