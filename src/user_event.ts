@@ -5,12 +5,12 @@ import { iosHeaders } from "./_api_headers.ts";
 import type { Cookie } from "./_cookie.ts";
 import { refreshCookieFromResponse } from "./_cookie.ts";
 
-export const userEvent = async (
+export const userEvent = async <T = unknown>(
   userId: ID,
   limit = 30,
   offset = 0,
   cookie?: Cookie,
-): Promise<UserEventApi> => {
+): Promise<UserEventApi<T>> => {
   const params = await encodeParams(`/api/event/get/${userId}`, {
     userId,
     offset,

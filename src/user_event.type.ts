@@ -1,7 +1,7 @@
-export interface UserEventApi {
+export interface UserEventApi<T> {
   lasttime: number;
   more: boolean;
   size: number;
-  events: unknown[];
+  events: T[];
   code: number;
 }
