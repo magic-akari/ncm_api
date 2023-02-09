@@ -1,10 +1,10 @@
 import { encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
-import { pcHeaders } from "./_api_headers.ts";
 import { UploadCheckResult } from "./cloud_upload_check.ts";
-import type { Cookie } from "./_cookie.ts";
-import { refreshCookieFromResponse } from "./_cookie.ts";
 import type { MatchedFile } from "./file.type.ts";
 import type { TokenAllocAudioResult } from "./nos_token_alloc.ts";
+import { pcHeaders } from "./_api_headers.ts";
+import type { Cookie } from "./_cookie.ts";
+import { refreshCookieFromResponse } from "./_cookie.ts";
 
 export interface uploadCloudInfoParam {
   file: MatchedFile;

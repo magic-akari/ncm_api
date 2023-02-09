@@ -1,8 +1,9 @@
 import { encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { extname } from "../dependencies/std/path/mod.ts";
+import type { LocalMusicFile } from "./file.type.ts";
 import { iosHeaders } from "./_api_headers.ts";
 import type { Cookie } from "./_cookie.ts";
 import { refreshCookieFromResponse } from "./_cookie.ts";
-import type { LocalMusicFile } from "./file.type.ts";
 
 export interface UploadCheckResult {
   songId: string;
@@ -15,7 +16,7 @@ export const cloudUploadCheck = async (
 ): Promise<UploadCheckResult> => {
   const params = await encodeParams("/api/cloud/upload/check", {
     bitrate: file.bitrate,
-    ext: "." + file.filename.split(".").pop(),
+    ext: extname(file.filename),
     length: file.size,
     md5: file.md5,
     songId: "0",

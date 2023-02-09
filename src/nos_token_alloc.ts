@@ -1,8 +1,9 @@
 import { decodeBody, encodeParams } from "../dependencies/ncm_crypto/eapi.ts";
+import { basename, extname } from "../dependencies/std/path/mod.ts";
+import type { LocalMusicFile } from "./file.type.ts";
 import { iosHeaders } from "./_api_headers.ts";
 import type { Cookie } from "./_cookie.ts";
 import { refreshCookieFromResponse } from "./_cookie.ts";
-import type { LocalMusicFile } from "./file.type.ts";
 
 export interface TokenAllocAudioResult {
   bucket: string;
@@ -61,10 +62,13 @@ export const nosTokenAllocAudio = (
   file: LocalMusicFile,
   cookie: Cookie,
 ): Promise<TokenAllocAudioResult> => {
+  const filename = file.filename;
+  const ext = extname(filename).slice(1);
+
   const data = {
     bucket: "",
-    ext: file.filename.split(".").pop(),
-    filename: file.filename,
+    ext,
+    filename,
     fileSize: file.size,
     nos_product: 3,
     type: "audio",
@@ -76,12 +80,15 @@ export const nosTokenAllocAudio = (
 };
 
 export const nosTokenAllocImage = (
-  filename: string,
+  path: string,
   cookie: Cookie,
 ): Promise<TokenAllocImageResult> => {
+  const filename = basename(path);
+  const ext = extname(path).slice(1);
+
   const data = {
     bucket: "yyimgs",
-    ext: filename.split(".").pop(),
+    ext,
     filename,
     local: false,
     nos_product: 0,
