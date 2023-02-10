@@ -5,13 +5,25 @@ import { refreshCookieFromResponse } from "./_cookie.ts";
 
 export interface shareFriendsResourceProps extends Record<string, unknown> {
   id: string;
-  type: "song" | "playlist" | "mv" | "djprogram" | "djradio" | "noresource";
+  type:
+    | "song"
+    | "album"
+    | "playlist"
+    | "mv"
+    | "djprogram"
+    | "djradio"
+    | "webview"
+    | "noresource";
   msg: string;
   pics?: string;
   videoinfo?: string;
   circleId?: string;
   privacySetting?: number;
   targetPublishTime?: number;
+  webviewUrl?: string;
+  webviewSubTitle?: string;
+  webviewTitle?: string;
+  webviewCoverImgUrl?: string;
 }
 
 export const shareFriendsResource = async (
